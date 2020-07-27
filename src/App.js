@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import Top from './components/Top'
+import SideNav from './components/SideNav';
+import Header from './components/Header';
+import Filters from './components/Filters';
+import ProgressBars from './components/ProgressBars';
+import Cards from './components/Cards';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="bg-gray-100">
+        <div className="md:flex flex-row lg:md:flex flex-row">
+          {/* this is a side bar */}
+          <div className="hidden md:flex flex-col lg:md:flex flex-col xl:flex flex-col">
+            <SideNav />
+          </div>
+          {/* this contains all the content */}
+          <div className="flex flex-col w-full">
+            <Top />
+            <div className="mx-8">
+              <Header />
+              <Filters />
+              <ProgressBars visibility='hidden' />
+              <Cards />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
